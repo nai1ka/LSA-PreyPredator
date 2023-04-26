@@ -381,7 +381,7 @@ public:
         for (int i = 0; i < t.getN(); ++i) {
             ::fprintf(tempDataFile, "%f %f\n", t[i], b[i]);
         }
-        ::fclose(tempDataFile);
+        fclose(tempDataFile);
         fflush(tempDataFile);
     }
 
