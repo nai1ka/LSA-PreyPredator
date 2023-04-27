@@ -388,7 +388,7 @@ public:
     static void drawGraph(ColumnVector &x, char *tempDataFileName) {
         static FILE *pipe;
         pipe = popen("gnuplot -persistent", "w");
-        ::fprintf(pipe, "set xrange [-10:10]; set yrange [-10:20];\n");
+        ::fprintf(pipe, "set xrange [-10:15]; set yrange [-20:20];\n");
 
 
         string function;
@@ -396,7 +396,6 @@ public:
             function = function + to_string(x[i]) + "*x**" + to_string(i);
             if (i > 0) function = function + " + ";
         }
-        cout << function;
         ::fprintf(pipe, "plot '%s',%s\n", tempDataFileName, function.c_str());
         pclose(pipe);
     }
