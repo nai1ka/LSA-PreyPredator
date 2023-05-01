@@ -20,10 +20,6 @@ void printPointsToFile(double* t,double* data, int n, char *name) {
  void drawGraph( char *kName, char*vName) {
     static FILE *pipe;
     pipe = popen("gnuplot -persistent", "w");
-
-
-
-
     ::fprintf(pipe, "plot '%s' with lines, '%s' with lines\n", kName, vName);
     pclose(pipe);
 }
@@ -61,6 +57,7 @@ int main() {
     for (int i = 0; i < n; ++i) {
         cout<<v[i]<<" ";
     }
+    printPointsToFile(tArr,v,n, "PreyPredator/v.txt");
 
     cout<<endl;
     cout<<"k:\n";
@@ -68,7 +65,7 @@ int main() {
         cout<<k[i]<<" ";
     }
     cout<<endl;
-    printPointsToFile(tArr,k,n, "k.txt");
+    printPointsToFile(tArr,k,n, "PreyPredator/k.txt");
 
     drawGraph("PreyPredator/k.txt","PreyPredator/v.txt");
 }
