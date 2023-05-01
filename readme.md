@@ -11,6 +11,12 @@
 
 <details >
 <summary>Prey Predator model examples</summary>
+<img src="LeastSquares/1.png" alt="First function">
+<img src="LeastSquares/1.png" alt="First function">
+<img src="LeastSquares/1.png" alt="First function">
+<img src="LeastSquares/1.png" alt="First function">
+
+
 ![First function](LeastSquares/1.png)  
 ![Second function](LeastSquares/2.png)  
 ![Third function](LeastSquares/3.png)  
