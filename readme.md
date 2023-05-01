@@ -11,7 +11,7 @@
 
 <details >
 <summary>Prey Predator model examples</summary>
-<img src="LeastSquares/1.png" alt="First function">
+<img src="https://github.com/nai1ka/AGLA_Assignment/blob/main/LeastSquares/1.png?raw=true" alt="First function">
 <img src="LeastSquares/1.png" alt="First function">
 <img src="LeastSquares/1.png" alt="First function">
 <img src="LeastSquares/1.png" alt="First function">
