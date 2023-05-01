@@ -70,6 +70,6 @@ int main() {
     cout<<endl;
     printPointsToFile(tArr,k,n, "k.txt");
 
-    drawGraph("k.txt","v.txt");
+    drawGraph("PreyPredator/k.txt","PreyPredator/v.txt");
 }
 
