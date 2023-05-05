@@ -12,7 +12,8 @@
 <details >
 <summary>Prey Predator model examples</summary>
 
-![First function](PreyPredator/1.png)
+![First function k(t), v(t)](PreyPredator/1.png)
+![First function k(v)](PreyPredator/2.png)
 </details>
 
 

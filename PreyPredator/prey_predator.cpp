@@ -17,10 +17,18 @@ void printPointsToFile(double* t,double* data, int n, char *name) {
 }
 
 
- void drawGraph( char *kName, char*vName) {
+ void drawGraphDependingOnTime(char *kName, char*vName) {
     static FILE *pipe;
     pipe = popen("gnuplot -persistent", "w");
-    ::fprintf(pipe, "plot '%s' with lines, '%s' with lines\n", kName, vName);
+     ::fprintf(pipe,"set xlabel 't'; \n");
+    ::fprintf(pipe, "plot '%s' with lines title 'k(t)', '%s' with lines title 'v(t)'\n", kName, vName);
+    pclose(pipe);
+}
+void drawGraphDependingOnV(char* fileName) {
+    static FILE *pipe;
+    pipe = popen("gnuplot -persistent", "w");
+    ::fprintf(pipe,"set xlabel 'v'; set ylabel 'k'; \n");
+    ::fprintf(pipe, "plot '%s' with lines title 'k(v)'\n", fileName);
     pclose(pipe);
 }
 
@@ -57,7 +65,7 @@ int main() {
     for (int i = 0; i < n; ++i) {
         cout<<v[i]<<" ";
     }
-    printPointsToFile(tArr,v,n, "PreyPredator/v.txt");
+    printPointsToFile(tArr,v,n, "PreyPredator/v(t).txt");
 
     cout<<endl;
     cout<<"k:\n";
@@ -65,8 +73,10 @@ int main() {
         cout<<k[i]<<" ";
     }
     cout<<endl;
-    printPointsToFile(tArr,k,n, "PreyPredator/k.txt");
+    printPointsToFile(tArr,k,n, "PreyPredator/k(t).txt");
+    printPointsToFile(v,k,n, "PreyPredator/k(v).txt");
 
-    drawGraph("PreyPredator/k.txt","PreyPredator/v.txt");
+    drawGraphDependingOnTime("PreyPredator/k(t).txt", "PreyPredator/v(t).txt");
+    drawGraphDependingOnV("PreyPredator/k(v).txt");
 }
 
